@@ -228,6 +228,67 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5418619}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &212656445
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 212656447}
+  - component: {fileID: 212656446}
+  m_Layer: 0
+  m_Name: Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &212656446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 212656445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88a60ca1bfae3724d8b27228157d9a34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tablelayout: {fileID: 11400000, guid: 2f4834667c3464741ae1f947bf1686a2, type: 2}
+  studens:
+  - {fileID: 11400000, guid: c45be32ae24d2f14882f30b35ea7d3e7, type: 2}
+  - {fileID: 11400000, guid: c45be32ae24d2f14882f30b35ea7d3e7, type: 2}
+  - {fileID: 11400000, guid: c45be32ae24d2f14882f30b35ea7d3e7, type: 2}
+  tablePrefab: {fileID: 845065525}
+  chairPrefab: {fileID: 1012218075}
+--- !u!4 &212656447
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 212656445}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 618.26843, y: 192.38782, z: -10.74239}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &845065525 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2375723729626005968, guid: 23ef9fb2188c479499c36305e7f0cc88, type: 3}
+  m_PrefabInstance: {fileID: 1234784665251391253}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1012218075 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 86472163572212471, guid: 96c42f820ea5dba4eb353f94711bffdc, type: 3}
+  m_PrefabInstance: {fileID: 1902694258598030256}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1096615875
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,7 +304,7 @@ GameObject:
   m_Layer: 0
   m_Name: Cube (3)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -586,6 +647,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tisch
       objectReference: {fileID: 0}
+    - target: {fileID: 2804670182864647119, guid: 23ef9fb2188c479499c36305e7f0cc88, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 2804670182864647119, guid: 23ef9fb2188c479499c36305e7f0cc88, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 2804670182864647119, guid: 23ef9fb2188c479499c36305e7f0cc88, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 10.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -619,11 +692,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2863372097741563436, guid: 96c42f820ea5dba4eb353f94711bffdc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 602.2272
+      value: 588.66
       objectReference: {fileID: 0}
     - target: {fileID: 2863372097741563436, guid: 96c42f820ea5dba4eb353f94711bffdc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 185.8475
+      value: 185.29
       objectReference: {fileID: 0}
     - target: {fileID: 2863372097741563436, guid: 96c42f820ea5dba4eb353f94711bffdc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -669,3 +742,4 @@ SceneRoots:
   - {fileID: 1641957462}
   - {fileID: 1902694258598030256}
   - {fileID: 1234784665251391253}
+  - {fileID: 212656447}
