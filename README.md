@@ -2,3 +2,6 @@
 ##
 # Ziel:
 Erstellung von einem Sitzplan In Unity mithilfe von:
+- statisch, dynamischer Koordinatenzuweisung
+- Prefabs
+- AudioClpis
