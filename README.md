@@ -9,6 +9,7 @@ https://teams.microsoft.com/l/message/48:notes/1733297681124?context=%7B%22conte
 
 https://github.com/user-attachments/assets/3cfcdd92-0fa7-46c1-8a7c-647bc17ea54e
 
+
 # Lessons Learned:
 - Unity macht manchmal Sachen die man nicht erwarte
 - Prefabs sind eine wichtige Komponente
