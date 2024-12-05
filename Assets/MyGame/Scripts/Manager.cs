@@ -23,7 +23,7 @@ public class Manager : MonoBehaviour
                 table.name = "Table " + row + " " + col;
                 table.transform.position = tablePosition;
                 //Sessel platzieren (2 pro Tisch)
-                // Sessel platzieren
+                
                 Transform pos1 = table.transform.Find("pos1");
                 Transform pos2 = table.transform.Find("pos2");
 
@@ -37,6 +37,8 @@ public class Manager : MonoBehaviour
                     Instantiate(chairPrefab, pos2.position, pos2.rotation, table.transform);
                     //Transform[]
                 }
+
+                //Studenten platzieren
 
             }
         }
