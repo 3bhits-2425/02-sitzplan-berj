@@ -155,6 +155,7 @@ MonoBehaviour:
   tableLayout: {fileID: 11400000, guid: 2f4834667c3464741ae1f947bf1686a2, type: 2}
   tablePrefab: {fileID: 8466415282888785010, guid: 506442de4c7e7be419be8e3bc11217a7, type: 3}
   chairPrefab: {fileID: 4190297630588868105, guid: a6ec1837d973ab04ebb65fffcbd896f7, type: 3}
+  studentPrefab: {fileID: 1152669653971756966, guid: 32da944729085f44aa5f6a3c2516aac6, type: 3}
 --- !u!4 &212656447
 Transform:
   m_ObjectHideFlags: 0

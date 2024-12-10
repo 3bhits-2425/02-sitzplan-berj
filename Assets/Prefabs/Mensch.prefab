@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5887681626838782392}
   - component: {fileID: 6324979706053001300}
   - component: {fileID: -2060809977933650584}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Mensch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,3 +91,5 @@ MonoBehaviour:
   personName: 
   rolleInKlasse: 
   augenfarbe: {r: 0, g: 0, b: 0, a: 0}
+  myGameObject: {fileID: 0}
+  myAudioSource: {fileID: 0}
