@@ -1,59 +1,126 @@
 using System.Collections;
+
 using System.Collections.Generic;
+
 using UnityEngine;
 
+using UnityEngine.UI;
+ 
 public class Manager : MonoBehaviour
 {
-    [SerializeField] private TableLayoutData tableLayout; //Ref zu TableLayout ScriptableObject
-    [SerializeField] private StudentData[] students; //
-    [SerializeField] private GameObject tablePrefab; //Prefab für Tisch
-    [SerializeField] private GameObject chairPrefab; //Prefab für Sessel
-    [SerializeField] private GameObject studentPrefab; //Prefab für Student
 
-    private int studentIndex = 0; //Index für Studenten
+    [SerializeField] private TableLayoutData tableLayout; // Referenz zu TableLayout
 
-    // Start is called before the first frame update
-    private void Start()
+    [SerializeField] private StudentData[] students; // Schülerdaten mit Bild
+
+    [SerializeField] private GameObject tablePrefab; // Tisch Prefab
+
+    [SerializeField] private GameObject chairPrefab; // Stuhl Prefab    
+
+    public int studentIndex = 0; // Um durch die Schülerdaten zu iterieren
+
+    void Start()
+
     {
-        for (int row = 0; row < tableLayout.rows; row++)
+
+        Debug.Log($"Students array length: {students.Length}");
+
+        for (int i = 0; i < students.Length; i++)
+
         {
-            for (int col = 0; col < tableLayout.columns; col++)
+
+            Debug.Log($"Student {i}: {students[i].studentName}, Image: {students[i].studentImage}");
+
+        }
+
+        for (int row = 0; row < tableLayout.rows; row++)
+
+        {
+
+            for (int column = 0; column < tableLayout.columns; column++)
+
             {
-                Vector3 tablePosition = new Vector3(col * tableLayout.tableSpacing, 0, row * tableLayout.tableSpacing);
 
-                //Tische platzieren
+                Vector3 tablePosition = new Vector3(column * tableLayout.tableSpacing, 0, row * tableLayout.tableSpacing);
+
                 GameObject table = Instantiate(tablePrefab, tablePosition, Quaternion.identity, transform);
-                table.name = "Table " + row + " " + col;
-                table.transform.position = tablePosition;
-                //Sessel platzieren (2 pro Tisch)
 
-                Transform pos1 = table.transform.Find("pos1");
-                Transform pos2 = table.transform.Find("pos2");
+                AssignStudentToChair(table);
 
-                if (pos1)
-                {
-                    AssignStudentToChair(pos1); //Transform[]
-                }
-
-                if (pos2)
-                {
-                    AssignStudentToChair(pos2); //Transform[]
-                    //Transform[]
-                }
-
-                //Studenten platzieren
-                void AssignStudentToChair(Transform chairPosition)
-                {
-                    if (studentIndex >= students.Length) return; // Keine weiteren Studenten verfügbar
-
-                    // Schüler platzieren
-                    GameObject student = Instantiate(studentPrefab, chairPosition.position, chairPosition.rotation, chairPosition);
-
-
-                    studentIndex++; //A//
-                }
             }
+
         }
 
     }
+
+    public void AssignStudentToChair(GameObject table)
+
+    {
+
+        Transform[] allTransforms = table.GetComponentsInChildren<Transform>();
+
+        foreach (var transform in allTransforms)
+
+        {
+
+            if (transform.name.StartsWith("StudentImage"))
+
+            {
+
+                if (studentIndex >= students.Length)
+
+                {
+
+                    Debug.LogWarning("No more students to assign!");
+
+                    return;
+
+                }
+
+                StudentData student = students[studentIndex];
+
+                studentIndex++;
+
+                Debug.Log($"Assigning student: {student.studentName} with image: {student.studentImage}");
+
+                var imageComponent = transform.GetComponent<UnityEngine.UI.Image>();
+
+                if (imageComponent != null)
+
+                {
+
+                    if (student.studentImage != null)
+
+                    {
+
+                        imageComponent.sprite = student.studentImage;
+
+                        Debug.Log($"Successfully set image for {student.studentName} on {transform.name}");
+
+                    }
+
+                    else
+
+                    {
+
+                        Debug.LogWarning($"Student {student.studentName} has no image!");
+
+                    }
+
+                }
+
+                else
+
+                {
+
+                    Debug.LogWarning($"No Image component found on {transform.name}");
+
+                }
+
+            }
+
+        }
+
+    }
+
 }
